@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:loginpage_ui/animation/FadeAnimation.dart';
+
 
 class LoginPage extends StatelessWidget {
   @override
@@ -33,32 +35,33 @@ class LoginPage extends StatelessWidget {
                 children: <Widget>[
                   Column(
                     children: <Widget>[
-                      Text(
+                      FadeAnimation(1,Text(
                         "Login",
                         style: TextStyle(
-                            fontSize: 30, fontWeight: FontWeight.bold),
-                      ),
+                            fontSize: 30, fontWeight: FontWeight.bold
+                            ),)),
                       SizedBox(
                         height: 20,
                       ),
-                      Text(
+                      FadeAnimation(1.2, Text(
                         "Login to your account",
-                        style: TextStyle(fontSize: 15, color: Colors.grey[700]),
-                      ),
+                        style: TextStyle(fontSize: 15, color: Colors.grey[700]
+                        ),
+                      )),
                     ],
                   ),
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 40),
                     child: Column(
                       children: <Widget>[
-                        makeInput(label: "Email"),
-                        makeInput(label: "password", obscureText: true),
+                        FadeAnimation(1.2, makeInput(label: "Email")),
+                        FadeAnimation(1.3, makeInput(label: "password", obscureText: true)),
                         
                       ],
                     ),
                   ),
                   
-                  Padding(
+                  FadeAnimation(1.4,Padding(
                     padding: EdgeInsets.symmetric(horizontal: 40),
                     child: Container(
                       padding: EdgeInsets.only(top: 3, left: 3),
@@ -85,8 +88,8 @@ class LoginPage extends StatelessWidget {
                         ),
                       ),
                     ),
-                  ),
-                  Row(
+                  )),
+                  FadeAnimation(1.5, Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Text("Don't have an account?"),
@@ -96,16 +99,18 @@ class LoginPage extends StatelessWidget {
                             fontWeight: FontWeight.w600, fontSize: 18),
                       ),
                     ],
-                  )
+                  ))
                 ],
               ),
             ),
-            Container(
+            FadeAnimation(1.2, Container(
               height: MediaQuery.of(context).size.height / 3,
               decoration: BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage('assets/art.jpg'), fit: BoxFit.cover)),
-            ),
+                      image: AssetImage('assets/art.jpg'), fit: BoxFit.cover
+                    )
+               ),
+            ))
           ],
         ),
       ),

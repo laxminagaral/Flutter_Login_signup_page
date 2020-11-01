@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:loginpage_ui/animation/FadeAnimation.dart';
 
 class SignupPage extends StatelessWidget {
   @override
@@ -31,30 +32,31 @@ class SignupPage extends StatelessWidget {
             children: <Widget>[
               Column(
                 children: <Widget>[
-                  Text(
+                  FadeAnimation(1, Text(
                     "Sign up",
                     style: TextStyle(
-                        fontSize: 30, fontWeight: FontWeight.bold),
-                  ),
+                        fontSize: 30, fontWeight: FontWeight.bold
+                    ),
+                  )),
                   SizedBox(
                     height: 20,
                   ),
-                  Text(
+                  FadeAnimation(1.2, Text(
                     "create your account",
                     style: TextStyle(fontSize: 15, color: Colors.grey[700]),
-                  ),
+                  )),
                 ],
               ),
               Column(
                 children: <Widget>[
-                  makeInput(label: "Email"),
-                  makeInput(label: "password", obscureText: true),
-                  makeInput(label: "Confirm Password", obscureText: true),
+                  FadeAnimation(1.2, makeInput(label: "Email")),
+                  FadeAnimation(1.3, makeInput(label: "password", obscureText: true)),
+                  FadeAnimation(1.4, makeInput(label: "Confirm Password", obscureText: true)),
                 ],
               ),
-              Column(
-                children: <Widget>[
-                  Container(
+              
+                
+                  FadeAnimation(1.5, Container(
                     padding: EdgeInsets.only(top: 3, left: 3),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(50),
@@ -78,10 +80,10 @@ class SignupPage extends StatelessWidget {
                             fontWeight: FontWeight.w600, fontSize: 18),
                       ),
                     ),
-                  ),
-                ],
-              ),
-              Row(
+                  )),
+                
+              
+              FadeAnimation(1.6, Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Text("Already have an account?"),
@@ -92,7 +94,7 @@ class SignupPage extends StatelessWidget {
                         fontWeight: FontWeight.w600, fontSize: 18),
                   ),
                 ],
-              ),
+              )),
             ],
           ),
         ),

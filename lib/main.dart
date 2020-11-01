@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:loginpage_ui/signup.dart';
 import 'package:loginpage_ui/login.dart';
+import 'package:loginpage_ui/animation/FadeAnimation.dart';
 
 
 
@@ -26,28 +27,28 @@ class Homepage extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
+            children: <Widget>[ 
               Column(
                 children: <Widget>[
-                  Text("Welcome",style: TextStyle(
+                  FadeAnimation(1, Text("Welcome",style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 30
-                  ),),
+                  ),)),
                   SizedBox(height: 20,),
-                  Text("Automatic identity verification which enables you to verify your identity", 
+                  FadeAnimation(1.2,Text("Automatic identity verification which enables you to verify your identity", 
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     color: Colors.grey[700],
                     fontSize: 15
-                  ),),
+                  ),)),
                 ],
               ),
               Column(
                 children: <Widget>[
-                  MaterialButton(
+                  FadeAnimation(1.5,MaterialButton(
                     minWidth: double.infinity,
                     height: 60,
-                    onPressed: () {
+                    onPressed: () { 
                       Navigator.push(context, MaterialPageRoute(builder: (context) => LoginPage()));
                     },
                     shape: RoundedRectangleBorder(
@@ -60,9 +61,9 @@ class Homepage extends StatelessWidget {
                       fontWeight: FontWeight.w600, 
                       fontSize: 18
                     ),),
-                  ),
+                  )),
                   SizedBox(height: 20,),
-                  Container(
+                  FadeAnimation(1.6,Container(
                     padding: EdgeInsets.only(top: 3, left: 3),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(55),
@@ -89,7 +90,7 @@ class Homepage extends StatelessWidget {
                         fontSize: 18
                       ),),
                     ),
-                   )
+                   ))
                  ],
               ),
             ],
